@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于知识图谱的《红楼梦》人物关系可视化及问答系统</title>
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../static/images/logo.jpg">
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/nifty.min.css" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo-icons.min.css" rel="stylesheet">
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="../static/css/nifty-demo.min.css" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/css/wiki.css" rel="stylesheet">
+        
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="../static/css/pace.min.css" rel="stylesheet">
+   
+    <script src="../static/js/pace.min.js"></script>
+
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="../static/js/jquery-2.2.4.min.js"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="../static/js/nifty.min.js"></script>
+    <script src="../static/js/icons.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+
+
+
+
+    <!--=================================================-->
+    
+    <!--Demo script [ DEMONSTRATION ]-->
+    <script src="../static/js/nifty-demo.min.js"></script>
+       
+
+</head>
+
+<body>
+
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="{{ url_for('index') }}" class="navbar-brand">
+                        <img src="../static/images/logo.jpg" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">林智敏毕设</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4>基于知识图谱的《红楼梦》人物关系可视化及问答系统</h4>
+                       
+
+
+
+                    
+
+                        
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    
+					<h4 class="text-main pad-btm bord-btm">问答系统</h4>
+                
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" id="search"class="form-control input-lg"  placeholder="请输入你的问题(eg.贾宝玉的爸爸是谁？)">
+                        <span class="input-group-addon btn btn-primary" onclick="search()">搜索</span>
+                    
+                    </div>
+					</div>
+                    </div>
+                    <div class="row" style="height: 40px;"></div>
+                    <div class="row" ><div class="col-lg-6" style="height: 400px;" id="guanxi">
+                    
+                        <script type="text/javascript">
+                         $(document).keypress(function (e) {
+                                // 回车键事件  
+                                if (e.which == 13) {
+                                    search();
+                                }
+                            }); 
+                            window.onresize = function () {
+
+                                myChart.resize();
+                            }
+                             
+                            $.ajaxSetup({ async: false });
+                            var myChart = echarts.init(document.getElementById("guanxi"));
+                            myChart.showLoading();
+                            
+                            myChart.hideLoading();
+                            option = {
+                                // backgroundColor: "white",
+                                title: {
+                                    // text: '红楼梦人物关系图',
+                                    textStyle: {
+                                        // color: "white",
+                                        fontWeight: "lighter",
+                                    }
+                                },
+                                animationDurationUpdate: 1500,
+                                animationEasingUpdate: 'quinticInOut',
+                                legend: {
+                                    x: "center",
+                                    show: true,
+                                    data: ["贾家荣国府", "贾家宁国府", "王家", "史家", "薛家", "其他", "林家"]
+                                },
+                                series: [
+                                    {
+                                        type: 'graph',
+                                        layout: 'force',
+                                        symbolSize: 50,
+                                        edgeSymbol: ['circle', 'arrow'],
+                                        edgeSymbolSize: [4, 4],
+                                        edgeLabel: {
+                                            normal: {
+                                                show: true,
+                                                textStyle: {
+                                                    fontSize: 10
+                                                },
+                                                formatter: "{c}"
+                                            }
+                                        },
+                                        force: {
+                                            repulsion: 2500,
+                                            edgeLength: [10, 100]
+                                        },
+                                        focusNodeAdjacency: true,
+                                        draggable: true,
+                                        roam: true,
+                                        categories: [{
+                                            name: '贾家荣国府',
+                                            // itemStyle: {
+                                            //     normal: {
+                                            //         color: "#009800",
+                                            //     }
+                                            // }
+                                        }, {
+                                            name: '贾家宁国府',
+                                            // itemStyle: {
+                                            //     normal: {
+                                            //         color: "#4592FF",
+                                            //     }
+                                            // }
+                                        }, {
+                                            name: '王家',
+                                            // itemStyle: {
+                                            //     normal: {
+                                            //         color: "#3592F",
+                                            //     }
+                                            // }
+                                        },
+                                        {
+                                            name: '史家',
+                                        }, {
+                                            name: '薛家',
+                                        }, {
+                                            name: '其他',
+                                        },
+                                        {
+                                            name: '林家',
+                                        }
+                                        ],
+                                        label: {
+                                            normal: {
+                                                show: true,
+                                                textStyle: {
+                                                    fontSize: 10
+                                                },
+                                            }
+                                        },
+                                        force: {
+                                            repulsion: 1000
+                                        },
+                                        tooltip: {
+                                            formatter: function (node) { // 区分连线和节点，节点上额外显示其他数字
+                                                if (!node.value) {
+                                                    return node.data.name;
+                                                } else {
+                                                    return node.data.name + ":" + node.data.showNum;
+                                                }
+                                            },
+                                        },
+                                        lineStyle: {
+                                            normal: {
+                                                opacity: 0.9,
+                                                width: 1,
+                                                curveness: 0.3
+                                            }
+                                        },
+                                        // progressiveThreshold: 700,
+                                        nodes: [],
+                                        links: [],
+
+
+
+                                    }
+                                ]
+                            };
+                            myChart.on('click', function (params) {
+                                    var province = params.name;
+                                    $.getJSON('/get_profile', {
+                                    character_name: province,
+
+                                }, function (json) {
+                                    $("#profile").html(json[0]);
+                                    $("#picture").css("display", "block");
+                                    $("#picture").attr("src", "data:image/jpg;base64," + json[1]);
+                                    
+
+                                });
+                                });
+                            function search() {
+
+                                    $.getJSON('/KGQA_answer', {
+                                        name: $("#search").val(),
+
+                                    }, function (json) {
+                                      
+                                        option.series[0].nodes = json[0].data.map(function (node, idx) {
+                                            node.id = idx;
+                                            return node;
+                                        });
+
+                                        option.series[0].links = json[0].links;
+
+                                        myChart.setOption(option, true);
+                                        $("#profile").html(json[1]);
+                                        $("#picture").css("display","block");
+                                        $("#picture").attr("src", "data:image/jpg;base64," + json[2]);
+                                    
+                                    });
+                                }
+                        </script>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                   <div class="row" style="width:200px;height:200px;">
+                        
+                            <img id="picture"style="display:none;width:200px;height:200px;" src=""  >
+                    </div>
+                        <div class="row">
+                        <div class="basic-info ">
+                        <dl class="basicInfo-block basicInfo-left" id="profile" >
+                            
+                        </dl>
+                    </div></div>
+
+                    </div>
+                    </div>
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+
+                    <!--Menu-->
+                    <!--================================-->
+                    <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            
+                                  
+                                    <!--Category name-->
+						            <li class="list-header"> 人物关系可视化</li>
+                        
+                                    <!--Menu list item-->
+                                    
+                        
+                                    <!--Menu list item-->
+                                   <li>
+                                        <a href="{{ url_for('search')}}">
+                                            <i class="fa fa-search" style="width:24px"></i>
+                                            <span class="menu-title">
+                                                <strong>检索人物关系</strong>
+                                            </span>
+                                            
+                                        </a>
+                        
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('get_all_relation') }}">
+                                            <i class="fa fa-pie-chart" style="width:24px"></i>
+                                            <span class="menu-title">
+                                                <strong>红楼梦人物关系全貌</strong>
+                                            </span>
+                                            
+                                        </a>
+                        
+                                    </li>
+                                    <!--Menu list item-->
+                                   
+						          
+                                   
+						            <li class="list-divider"></li>
+						
+						            <!--Category name-->
+						            <li class="list-header">问答系统</li>
+						
+						            <!--Menu list item-->
+						            <li >
+						                <a href="{{ url_for('KGQA') }}">
+						                    <i class="fa fa-question-circle" style="width:24px"></i>
+						                    <span class="menu-title">人物关系问答</span>
+											
+						                </a>
+						
+						                
+						            </li>
+						
+						                                    </ul>
+
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================-->
+                    <!--End menu-->
+
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+        </div>
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+
+           <p class="pad-lft">Copyright&#0169; 2018 林智敏  &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All Rights Reserved </p>
+
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+   
+</body>
+</html>

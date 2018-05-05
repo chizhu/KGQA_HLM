@@ -1,0 +1,24 @@
+﻿@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../fonts/dxi1orhcpsqm3vp6mxoatynf5ufddttmlvmwujdhhgs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/cjzkeoubrn4kerxqtauh3acwcynf_cdxxwclxiixg1c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../fonts/mtp_ysujh_bn48vbg8snsonf5ufddttmlvmwujdhhgs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/k3k702zokiljc3wvjuplzinf5ufddttmlvmwujdhhgs.ttf) format('truetype');
+}

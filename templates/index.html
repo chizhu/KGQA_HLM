@@ -1,0 +1,77 @@
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/logo.jpg">
+    <title>开启探索</title>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+	#container{
+		background: url("../static/images/bk2.jpg");
+		 background-position: 100% 100%;
+    background-size: 100% auto;
+	}
+	#a{
+
+		font-size: 18px;
+    width: 230px;
+    display: block;
+    margin: 0 auto;
+    /*text-decoration: none;*/
+    padding: 12px 50px;
+    border-radius: 5px;
+    border: 1px solid #f2f2f2;
+	background-color: transparent;
+    text-align: center;
+    color: #f2f2f2;
+	cursor: pointer;
+    
+    
+
+	}
+	#a:hover {
+    background-color:#249e92;
+    cursor: pointer;
+   
+    
+}
+p{font-size: 40px;
+    font-weight: lighter;
+    
+    margin-bottom: 90px;}
+</style>
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/nifty.min.css" rel="stylesheet">
+
+
+        
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<div id="container" class="cls-container">
+		
+		<!-- BACKGROUND IMAGE -->
+		<!--===================================================-->
+		
+		
+		<!-- LOGIN FORM -->
+		<!--===================================================-->
+		<div class="cls-content" style="margin-top:150px ">
+			<div class="mar-ver pad-btm" >
+			
+				<p class="text-muted"style="color:white " >基于知识图谱的《红楼梦》人物关系可视化及问答系统</p>
+				<a id="a" href="{{ url_for('search')}}">开启探索</a>
+			</div>
+		    
+		</div>
+	</div>
+	
+		</body>
+</html>
