@@ -1,3 +1,4 @@
 flask
 py2neo
 pyltp
+bs4
