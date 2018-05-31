@@ -30,7 +30,7 @@
 5.运行python app.py,浏览器打开localhost:5000即可查看<br>
 
 系统整体流程图：<br>
-![avatar](/user/desktop/doge.png)
+![avatar](https://github.com/chizhu/KGQA_HLM/blob/master/%E5%9B%BE%E7%89%87%201.png)
 
 
 
