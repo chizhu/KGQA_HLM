@@ -18,9 +18,14 @@
 6)  KGQA文件夹是问答系统模块
      |-ltp.py 分词、词性标注、命名实体识别<br>
 7)  spider文件夹是爬虫模块
+     |- get_*.py 是之前爬取人物资料的代码，已经产生好images和json 可以不用再执行<br>
+     |-show_profile.py 是调用人物资料和图谱展示在前端的代码
 <hr>
-* 部署步骤：
-1.
+* 部署步骤：<br>
+0.安装所需的库 执行python -r requirement.txt
+1.先下载好neo4j图数据库，并配好环境（注意neo4j需要jdk8）。修改neo_db目录下的配置文件config.py,设置图数据库的账号和密码。<br>
+2.切换到neo_db目录下，执行python  create_graph.py 建立知识图谱
+3.
 
 
 
