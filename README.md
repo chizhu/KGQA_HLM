@@ -21,15 +21,15 @@
      |- get_*.py 是之前爬取人物资料的代码，已经产生好images和json 可以不用再执行<br>
      |-show_profile.py 是调用人物资料和图谱展示在前端的代码
 <hr>
-* 部署步骤：<br>
-0.安装所需的库 执行python -r requirement.txt<br>
-1.先下载好neo4j图数据库，并配好环境（注意neo4j需要jdk8）。修改neo_db目录下的配置文件config.py,设置图数据库的账号和密码。<br>
-2.切换到neo_db目录下，执行python  create_graph.py 建立知识图谱<br>
-3.去 [这里](http://pyltp.readthedocs.io/zh_CN/latest/api.html#id2) 下载好ltp模型。[ltp简介](http://ltp.ai/)<br>
-4.在KGQA目录下，修改ltp.py里的ltp模型文件的存放目录<br>
-5.运行python app.py,浏览器打开localhost:5000即可查看<br>
+* 部署步骤：
+* 0.安装所需的库 执行python -r requirement.txt<br>
+* 1.先下载好neo4j图数据库，并配好环境（注意neo4j需要jdk8）。修改neo_db目录下的配置文件config.py,设置图数据库的账号和密码。<br>
+* 2.切换到neo_db目录下，执行python  create_graph.py 建立知识图谱<br>
+* 3.去 [这里](http://pyltp.readthedocs.io/zh_CN/latest/api.html#id2) 下载好ltp模型。[ltp简介](http://ltp.ai/)<br>
+* 4.在KGQA目录下，修改ltp.py里的ltp模型文件的存放目录<br>
+* 5.运行python app.py,浏览器打开localhost:5000即可查看<br>
 
-系统整体流程图：<br>
+* 系统整体流程图：
 ![流程](https://github.com/chizhu/KGQA_HLM/blob/master/%E5%9B%BE%E7%89%87%201.png)
 
 
