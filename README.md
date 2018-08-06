@@ -23,7 +23,7 @@
 <hr>
 
 部署步骤：<br>
-* 0.安装所需的库 执行python -r requirement.txt<br>
+* 0.安装所需的库 执行pip -r requirement.txt<br>
 * 1.先下载好neo4j图数据库，并配好环境（注意neo4j需要jdk8）。修改neo_db目录下的配置文件config.py,设置图数据库的账号和密码。<br>
 * 2.切换到neo_db目录下，执行python  create_graph.py 建立知识图谱<br>
 * 3.去 [这里](http://pyltp.readthedocs.io/zh_CN/latest/api.html#id2) 下载好ltp模型。[ltp简介](http://ltp.ai/)<br>
