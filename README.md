@@ -1,7 +1,7 @@
 # KGQA_HLM
 基于知识图谱的《红楼梦》人物关系可视化及问答系统
 
-* 详情请见<del>[http://chizhunlp.com](http://111.230.92.110/)</del>(已失效)
+* 详情请见http://chizhunlp.com](http://111.230.92.110/)
 
 1)  app.py是整个系统的主入口<br>
 2)  templates文件夹是HTML的页面<br>
