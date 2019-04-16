@@ -1,10 +1,11 @@
 # KGQA_HLM
 基于知识图谱的《红楼梦》人物关系可视化及问答系统
 
-[![Python version]((https://img.shields.io/badge/language-KGQA_HLM-orange.svg))](https://www.python.org/downloads/release/python-360/)
+[![Python version](https://img.shields.io/badge/language-KGQA_HLM-orange.svg)](https://www.python.org/downloads/release/python-360/)
 ![Issues](https://github.com/BrikerMan/Kashgari/issues)
 
 * ~~详情请见 [http://chizhunlp.com](http://111.230.92.110/)~~
+
 文件树:<br>
 1)  app.py是整个系统的主入口<br>
 2)  templates文件夹是HTML的页面<br>
