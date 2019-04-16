@@ -39,12 +39,17 @@
 
 网站示例:<br>
 欢迎界面
+
 ![欢迎界面](https://github.com/chizhu/KGQA_HLM/blob/master/1.png)
 
 主界面
+
 ![界面](https://github.com/chizhu/KGQA_HLM/blob/master/2.png)
 
 ![界面](https://github.com/chizhu/KGQA_HLM/blob/master/3.png)
+
 ![界面](https://github.com/chizhu/KGQA_HLM/blob/master/4.png)
+
 ![界面](https://github.com/chizhu/KGQA_HLM/blob/master/5.png)
+
 ![界面](https://github.com/chizhu/KGQA_HLM/blob/master/6.png)
