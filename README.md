@@ -1,5 +1,6 @@
 # KGQA_HLM
 基于知识图谱的《红楼梦》人物关系可视化及问答系统
+
 [![Python version]](https://www.python.org/downloads/release/python-360/)
 [![Issues]](https://github.com/BrikerMan/Kashgari/issues)
 
