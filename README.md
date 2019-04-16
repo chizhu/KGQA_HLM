@@ -1,7 +1,8 @@
 # KGQA_HLM
 基于知识图谱的《红楼梦》人物关系可视化及问答系统
 
-[![Python version](https://img.shields.io/badge/language-KGQA_HLM-orange.svg)](https://www.python.org/downloads/release/python-360/)
+[![Project](https://img.shields.io/badge/project-KGQA_HLM-orange.svg)](https://www.python.org/downloads/release/python-360/)
+[![Python version](https://img.shields.io/badge/language-3.6-black.svg)](https://www.python.org/downloads/release/python-360/)
 [![Issues](https://img.shields.io/github/issues/chizhu/KGQA_HLM.svg)](https://github.com/chizhu/KGQA_HLM/issues)
 
 * ~~详情请见 [http://chizhunlp.com](http://111.230.92.110/)~~
